@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { logout } from '../actions/auth';
+import { refreshLogin } from '../actions/auth';
 import Flash from '../components/Flash';
 
 class App extends React.Component {
@@ -9,6 +10,7 @@ class App extends React.Component {
     super(props);
     this.navs = this.navs.bind(this);
     this.logout = this.logout.bind(this);
+    this.props.dispatch(refreshLogin());
   }
 
   componentDidMount() {
